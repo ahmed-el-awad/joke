@@ -3,9 +3,7 @@ async function getJoke() {
         const response = await fetch("https://official-joke-api.appspot.com/random_joke");
         const jsonData = await response.json();
 
-        const id = jsonData["id"];
-        const setup = jsonData["setup"];
-        const punchline = jsonData["punchline"];
+        const { id, setup, punchline } = jsonData;
 
         console.log(`${id}: ${setup} ${punchline}`);
         return { id, setup, punchline };
